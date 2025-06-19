@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 26%);
+  --muted: hsl(48, 100%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 26%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 26%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 90%);
+  --primary: hsl(340, 82%, 52%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(48, 100%, 96%);
+  --secondary-foreground: hsl(0, 0%, 15%);
+  --accent: hsl(48, 100%, 96%);
+  --accent-foreground: hsl(0, 0%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(0, 0%, 26%);
+  --radius: 0.5rem;
+  
+  /* Custom engagement theme colors */
+  --rose-primary: hsl(340, 82%, 52%);
+  --rose-light: hsl(340, 100%, 97%);
+  --cream: hsl(48, 100%, 96%);
+  --charcoal: hsl(0, 0%, 26%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(340, 82%, 52%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground min-h-screen;
+    background: linear-gradient(135deg, var(--rose-light), var(--cream));
+  }
+}
+
+/* Custom styles for engagement theme */
+.engagement-gradient {
+  background: linear-gradient(135deg, var(--rose-light), var(--cream));
+}
+
+.engagement-shadow {
+  box-shadow: 0 10px 25px -5px rgba(233, 30, 99, 0.1), 0 10px 10px -5px rgba(233, 30, 99, 0.04);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* QR Code styling */
+.qr-container {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border: 2px solid rgba(233, 30, 99, 0.1);
+}
+
+/* Upload area styling */
+.upload-area {
+  transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+  border-color: var(--rose-primary);
+  background-color: rgba(233, 30, 99, 0.02);
+}
+
+.upload-area.dragover {
+  border-color: var(--rose-primary);
+  background-color: rgba(233, 30, 99, 0.05);
+}
+
+/* Animation for hearts */
+.animate-heart {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Media gallery hover effects */
+.media-item {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.media-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.media-item img {
+  transition: transform 0.3s ease;
+}
+
+.media-item:hover img {
+  transform: scale(1.05);
+}
